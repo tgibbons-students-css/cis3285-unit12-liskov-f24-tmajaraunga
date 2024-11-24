@@ -1,16 +1,28 @@
-﻿using SubtypeCovariance;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SubtypeCovariance;
 
-class Program
+namespace ConsoleApp
 {
-    static void Main(string[] args)
+    class Program
     {
+        static void Main(string[] args)
+        {
 
-        EntityRepository entityRepository = new EntityRepository();
-        Entity myEntity = entityRepository.GetByID(Guid.NewGuid());
+            EntityRepository entityRepository = new EntityRepository();
+            Entity myEntity = entityRepository.GetByID(Guid.NewGuid());
 
-        myEntity.Name = "Tom";
-        Console.WriteLine("New entity ID: " + myEntity.ID.ToString());
-        Console.WriteLine("New entity Name: " + myEntity.Name);
+            myEntity.Name = "Tom";
+            Console.WriteLine("New entity ID: " + myEntity.ID.ToString());
+            Console.WriteLine("New entity Name: " + myEntity.Name);
 
+            Console.WriteLine("Press any key to quit...");
+
+            Console.ReadKey();
+
+        }
     }
 }
